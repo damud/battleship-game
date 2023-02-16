@@ -52,15 +52,20 @@ function addShipPiece(ship) {
     let randomBoolean = Math.random() < 0.5;
     let isHorizontal = randomBoolean;
     let randomStartIndex = Math.floor(Math.random() * width * width);
+
+    let validStart = isHorizontal ? randomStartIndex <= width * width - ship.length ? randomStartIndex : width * width - ship.length :
+    
+    // Vertical position
+    randomStartIndex <= width * width - width * ship.length ? randomStartIndex : randomStartIndex - ship.length * width + width;
     console.log(randomStartIndex)
 
     let shipBlocks = [];
 
     for (let i = 0; i < ship.length; i++) {
         if (isHorizontal) {
-            shipBlocks.push(allBoardBlocks[Number(randomStartIndex) + i]);
+            shipBlocks.push(allBoardBlocks[Number(validStart) + i]);
         } else {
-            shipBlocks.push(allBoardBlocks[Number(randomStartIndex) + i * width]);
+            shipBlocks.push(allBoardBlocks[Number(validStart) + i * width]);
         }
     }
       console.log(shipBlocks);
