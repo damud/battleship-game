@@ -74,3 +74,11 @@ align-items: center;
     height: 10px;
     margin: 3px;
 }
+
+.hover, .empty {
+    background-color: gray;
+}
+
+.boom {
+    background-color: red;
+}
