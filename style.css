@@ -76,9 +76,19 @@ align-items: center;
 }
 
 .hover, .empty {
-    background-color: gray;
+    background-color: gray !important;
 }
 
 .boom {
-    background-color: red;
+    background-color: red !important;
 }
+
+#computer .destroyer,
+#computer .submarine,
+#computer .cruiser,
+#computer .battleship,
+#computer .carrier {
+    background-color: pink;
+}
+
+
